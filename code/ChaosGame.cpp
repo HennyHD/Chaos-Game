@@ -64,9 +64,9 @@ int main()
 		****************************************
 		*/
 
-        if(points.size() > 0)
+        double count = 0;
+	if(points.size() > 0)
         {
-		double count = 0;
 	///generate more point(s)
             ///select random vertex
 		double randomVertex = rand() % 3;  //Random Vertex Tracker
@@ -74,15 +74,18 @@ int main()
 		double midPointx = midpoint(points.at(count).x, vertices.at(randomVertex).x);
 		double midPointy = midpoint(points.at(count).y, vertices.at(randomVertex).y);
             ///push back the newly generated coord.
-		points.push_back(midPointx, midPointy);
-		count++;
+		points.push_back(Vector2f(midPointx, midPointy);
         }
 
-        /*
-		****************************************
-		Draw
-		****************************************
-		*/
+        // DRAW
+        {
+            RectangleShape rect(Vector2f(10,10));
+            rect.setPosition(Vector2f(points[count].x, points[count].y));
+            rect.setFillColor(Color::Blue);
+            window.draw(rect);
+        }
+        window.display();
+    }
         window.clear();
         for(int i = 0; i < vertices.size(); i++)
         {
