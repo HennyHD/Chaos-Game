@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <numeric>
 
 // Make code easier to type with "using namespace"
 using namespace sf;
