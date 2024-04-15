@@ -16,6 +16,20 @@ int main()
 	// Create and open a window for the game
 	RenderWindow window(vm, "Chaos the Game", Style::Default);
 
+		//Text Box stuff
+	Font font;
+	if(!font.loadFromFile("Lobster-Regular.ttf")) // load a ttf file (put with cpp)
+	{
+		throw("FONT FAILED TO LOAD");  // throw a text
+	}
+
+	Text text;			//Text Customization
+	text.setFont(font);
+	text.setCharacterSize(24);
+	text.setColor(Color::Red);
+	text.setString("OH HOW IT FEELS TO BE ALIVE");  //Set a string into the buffer
+	
+
     vector<Vector2f> vertices;
     vector<Vector2f> points;
 
@@ -84,6 +98,7 @@ int main()
 		****************************************
 		*/
         window.clear();
+	window.draw(text);  // Display text buffer
         for(int i = 0; i < vertices.size(); i++)
         {
             RectangleShape rect(Vector2f(10,10));
