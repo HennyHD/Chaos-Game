@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <numeric>
 
 // Make code easier to type with "using namespace"
 using namespace sf;
@@ -15,7 +14,7 @@ int main()
     // Create a video mode object
 	VideoMode vm(1920, 1080);
 	// Create and open a window for the game
-	RenderWindow window(vm, "Chaos the game", Style::Default);
+	RenderWindow window(vm, "Timber Game!!", Style::Default);
 
     vector<Vector2f> vertices;
     vector<Vector2f> points;
@@ -49,7 +48,9 @@ int main()
                     }
                     else if(points.size() == 0)
                     {
-			points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
+                        ///fourth click
+                        ///push back to points vector
+                        points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
                     }
                 }
             }
@@ -63,29 +64,25 @@ int main()
 		Update
 		****************************************
 		*/
-
-        double count = points.size() - 1;
-	if(points.size() > 0)
+	double count = points.size() - 1;
+        if(points.size() > 0)
         {
-	///generate more point(s)
+            ///generate more point(s)
             ///select random vertex
-		double randomVertex = rand() % 3;  //Random Vertex Tracker
             ///calculate midpoint between random vertex and the last point in the vector
-		double midPointx = (points.at(count).x + vertices.at(randomVertex).x) /2;
-		double midPointy = (points.at(count).y + vertices.at(randomVertex).y) /2;
             ///push back the newly generated coord.
-		points.push_back(Vector2f(midPointx, midPointy));
+            	double count = points.size() - 1;
+            	double randomVertex = rand() % 3;
+            	double midPointx = (points.at(count).x + vertices.at(randomVertex).x) /2;
+		double midPointy = (points.at(count).y + vertices.at(randomVertex).y) /2;
+		points.push_back(Vector2f(midPointx, midPointy));	
         }
 
-        // DRAW
-        {
-            RectangleShape rect(Vector2f(10,10));
-            rect.setPosition(Vector2f(points[count].x, points[count].y));
-            rect.setFillColor(Color::Blue);
-            window.draw(rect);
-        }
-        window.display();
-    }
+        /*
+		****************************************
+		Draw
+		****************************************
+		*/
         window.clear();
         for(int i = 0; i < vertices.size(); i++)
         {
@@ -94,6 +91,14 @@ int main()
             rect.setFillColor(Color::Blue);
             window.draw(rect);
         }
+     
+     	for(int i = 0; i < points.size(); i++){
+            RectangleShape rect(Vector2f(10,10));
+            rect.setPosition(Vector2f(points[i].x, points[i].y));
+            rect.setFillColor(Color::Blue);
+            window.draw(rect);
+            }
+        
         window.display();
     }
 }
