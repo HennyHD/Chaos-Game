@@ -14,7 +14,7 @@ int main()
     // Create a video mode object
 	VideoMode vm(1920, 1080);
 	// Create and open a window for the game
-	RenderWindow window(vm, "Timber Game!!", Style::Default);
+	RenderWindow window(vm, "Chaos the Game", Style::Default);
 
     vector<Vector2f> vertices;
     vector<Vector2f> points;
