@@ -14,7 +14,7 @@ int main()
     // Create a video mode object
 	VideoMode vm(1920, 1080);
 	// Create and open a window for the game
-	RenderWindow window(vm, "Timber Game!!", Style::Default);
+	RenderWindow window(vm, "Chaos the game", Style::Default);
 
     vector<Vector2f> vertices;
     vector<Vector2f> points;
@@ -48,8 +48,7 @@ int main()
                     }
                     else if(points.size() == 0)
                     {
-                        ///fourth click
-                        ///push back to points vector
+			points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
                     }
                 }
             }
@@ -66,7 +65,7 @@ int main()
 
         if(points.size() > 0)
         {
-            ///generate more point(s)
+		///generate more point(s)
             ///select random vertex
             ///calculate midpoint between random vertex and the last point in the vector
             ///push back the newly generated coord.
