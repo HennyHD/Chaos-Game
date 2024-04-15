@@ -74,7 +74,7 @@ int main()
 		double midPointx = (points.at(count).x + vertices.at(randomVertex).x) /2;
 		double midPointy = (points.at(count).y + vertices.at(randomVertex).y) /2;
             ///push back the newly generated coord.
-		points.push_back(Vector2f(midPointx, midPointy);
+		points.push_back(Vector2f(midPointx, midPointy));
         }
 
         // DRAW
