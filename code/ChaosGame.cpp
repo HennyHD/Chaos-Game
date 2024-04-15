@@ -65,22 +65,16 @@ int main()
 
         if(points.size() > 0)
         {
-		double count = 1;
-		///generate more point(s)
-		points.push_back(0,0);  //create a new point
+		double count = 0;
+	///generate more point(s)
             ///select random vertex
 		double randomVertex = rand() % 3;  //Random Vertex Tracker
             ///calculate midpoint between random vertex and the last point in the vector
-		double midPointx = midpoint(points.at(count-1).x, vertices.at(randomVertex).x);
-		double midPointy = midpoint(points.at(count-1).y, vertices.at(randomVertex).y);
+		double midPointx = midpoint(points.at(count).x, vertices.at(randomVertex).x);
+		double midPointy = midpoint(points.at(count).y, vertices.at(randomVertex).y);
             ///push back the newly generated coord.
-		
-		
-		
-		
-
-
-		
+		points.push_back(midPointx, midPointy);
+		count++;
         }
 
         /*
