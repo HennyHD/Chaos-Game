@@ -17,15 +17,15 @@ int main()
 	RenderWindow window(vm, "Chaos the Game", Style::Default);
 
 		//Text Box stuff
-	Font font;
-	if(!font.loadFromFile("Lobster-Regular.ttf")) // load a ttf file (put with cpp)
+	Font font;  //create font class
+	if(!font.loadFromFile("Lobster-Regular.ttf")) // load a ttf file (font file, put with cpp)
 	{
-		throw("FONT FAILED TO LOAD");  // throw a text
+		throw("FONT FAILED TO LOAD");  // throw a text if failed
 	}
 
 	Text text;			//Text Customization
-	text.setFont(font);
-	text.setCharacterSize(24);
+	text.setFont(font);  // link font
+	text.setCharacterSize(24);  
 	text.setColor(Color::Red);
 	text.setString("OH HOW IT FEELS TO BE ALIVE");  //Set a string into the buffer
 	
