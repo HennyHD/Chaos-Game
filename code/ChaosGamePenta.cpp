@@ -59,7 +59,7 @@ int main()
                     std::cout << "mouse y: " << event.mouseButton.y << std::endl;
 
                     if(vertices.size() < 5)  
-                    {	//first 5 cliks
+                    {	//first 5 clicks
                         vertices.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));  //record in vector
                     }
                     else if(points.size() == 0)
