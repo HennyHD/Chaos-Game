@@ -27,8 +27,7 @@ int main()
 	text.setFont(font);  // link font
 	text.setCharacterSize(30);  
 	text.setColor(Color::Green);
-	text.setString("1. Please left click five\npoints to outline the shape\nof a large pentagon\n
-		       \n2. To begin, choose a\nspot and left click one\n last time");  //Set a string into the buffer
+	text.setString("1. Please left click five\npoints to outline the shape\nof a large pentagon\n\n2. To begin, choose a\nspot and left click one\n last time");  //Set a string into the buffer
 	
 	//Declaring more variables
     vector<Vector2f> vertices;  //Vectors to track and record clicks and positions
